@@ -11,7 +11,7 @@ import RPi.GPIO as GPIO  # For visual output
 from PiExecute import PiExecute  # For executing commands
 
 # Debug
-logging.basicConfig(filename='connector.log', level=logging.DEBUG)
+logging.basicConfig(filename='connector.log', level=logging.WARN)
 console_log = logging.StreamHandler()
 console_log.setLevel(logging.DEBUG)
 log = logging.getLogger()
@@ -112,7 +112,7 @@ class HomeConnector:
     def exit(signal, frame):
         logging.info("Exiting...")
         lights.all_off()
-        PiExecute("KILLALL")
+        PiExecute("killall")
         sys.exit(0)
 
     def __init__(self, xfinityUsername, xfinityPassword):
@@ -137,9 +137,9 @@ class HomeConnector:
 
     @staticmethod
     def attendToConnection(conn):
-        LARGE_FILE_TIMEOUT = 5
-        PING_SLEEP = 2
-        COMMAND_WAIT = 3
+        LARGE_FILE_TIMEOUT = 10
+        PING_SLEEP = 5
+        COMMAND_WAIT = 2
 
         logging.debug('Attending to connection...')
         while True:
@@ -151,16 +151,16 @@ class HomeConnector:
                 lights.ping()
                 resp = conn.recv(4)
                 if resp != b"PONG":
-                    log.info("[-] Unusual response from home: %s" % resp)
+                    log.debug("[-] Unusual response from home: %s" % resp)
                 else:
-                    log.info("[+] Received PONG!")
+                    log.debug("[+] Received PONG!")
                     lights.pong()
 
                 # Receive and execute commands
                 ready = select.select([conn], [], [], COMMAND_WAIT)
                 if ready[0]:  # if command ready
                     cmd = conn.recv(2048)
-                    log.info("\t\t\t[+] Got data: %s" % cmd)
+                    log.info("[+] Got data: %s" % cmd)
                     response = PiExecute(cmd)
                     if not response:
                         response = TXT + "[-] Run CMD returned None"
@@ -168,10 +168,11 @@ class HomeConnector:
                     conn.sendall(response)
                     if len(response) > 2048:  # extra time for sending a large file
                         time.sleep(LARGE_FILE_TIMEOUT)
+                else:
                     time.sleep(PING_SLEEP)  # sleep a little before pinging
             # If something went wrong with our connection
             except Exception, e:
-                log.info("\t\t\t[-] Home sending/receiving error: %s" % str(e))
+                log.info("[-] Home sending/receiving error: %s" % str(e))
                 break
         lights.pong()
         logging.error('Leaving attend connection function -> back to debugging connection')
@@ -190,17 +191,17 @@ class HomeConnector:
             logging.info('Checking wifi...')
 
             while self.checkWifi():  # If connected to some wifi
-                log.info(green("\t[+] Connected to wifi"))
+                log.info(green("[+] Connected to wifi"))
                 lights.updateStatus((1, 0, 0))
 
-                log.info('\tChecking login...')
+                log.info('Checking login...')
                 while self.login():  # If can access internet
                     # Update log/lights
-                    log.info(green("\t\t[+] Can access internet"))
+                    log.info(green("[+] Can access internet"))
                     lights.updateStatus((1, 1, 0))
 
                     # Try to connect to home
-                    log.info("\t\tTrying to connect to home...")
+                    log.info("Trying to connect to home...")
                     self.socket = socket.socket()
                     self.socket.settimeout(HOME_SOCKET_TIMEOUT)  # Initial connection
                     nFails = 0
@@ -208,15 +209,15 @@ class HomeConnector:
                         if self.attemptHomeConnection():
                             break
                         else:
-                            log.info('\t\t[-] Failed home socket connection')
+                            log.info('[-] Failed home socket connection')
                             nFails += 1
                     if nFails == HOME_SOCKET_RETRIES:  # if both attempts failed
-                        log.info('\t\t[-] Exceeded number of home socket retries!')
+                        log.info('[-] Exceeded number of home socket retries!')
                         del self.socket
                         continue
 
                     # If can access home
-                    log.info(green("\t\t\t[+] Connected to home base!"))
+                    log.info(green("[+] Connected to home base!"))
                     lights.updateStatus((1, 1, 1))
                     self.socket.settimeout(LOSE_CONNECTION_TIMEOUT)  # timeout for losing connection
 
@@ -267,7 +268,7 @@ class HomeConnector:
         self.loginForm['hash'] = self.getBetween(self.hashIdentifiers, page.text)
         self.loginForm['client_mac'] = self.getBetween(self.macIdentifiers, page.text)
         self.loginForm['get_url'] = self.getBetween(self.geturlIdentifiers, page.text)
-        print "Sending form: %s" % str(self.loginForm)
+        logging.info("Sending form: %s" % str(self.loginForm))
 
         # Send form data and wait on response
         resp = self.session.post(self.loginPostUrl, data=self.loginForm)
@@ -291,7 +292,7 @@ class HomeConnector:
 
 
 if __name__ == '__main__':
-    username = 'jeffnkarajacobs@yahoo.com'
-    password = 'Luke5wim5fa5t'
+    username = 'you@domain.com'
+    password = 'yourpassword'
     con = HomeConnector(username, password)
     con.searchForConnection()

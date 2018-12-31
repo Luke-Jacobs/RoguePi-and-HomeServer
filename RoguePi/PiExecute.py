@@ -1,11 +1,11 @@
 from sys import path
-path.append('Modules')  # For importing modules from another folder
+path.append('/home/pi/RoguePi/Modules')  # For importing modules from another folder
 from CameraModule import Camera
 from TimelapseModule import Timelapse
 
 # Global Constants
-services = {"CAMERA": Camera(),
-            "TIMELAPSE": Timelapse()}
+services = {"camera": Camera(),
+            "timelapse": Timelapse()}
 TXT = "TXT----"
 
 
@@ -20,31 +20,40 @@ def PiExecute(cmd):
     cmd = cmd.split(" ")  # cmd and args
 
     # Start a specific thread
-    if cmd[0] == "START":
-        services[cmd[1]].start()
-        return TXT + "[i] Starting %s..." % cmd[1]
+    if cmd[0] == "start":
+        if services[cmd[1]].is_alive():
+            return TXT + "[-] Service is already running!"
+        try:
+            services[cmd[1]].start()
+            return TXT + "[i] Starting %s..." % cmd[1]
+        except RuntimeError, e:  # If the Thread has been already started, restart it
+            print 'RuntimeError: %s' % str(e)
+            serviceClass = type(services[cmd[1]])  # This is certainly a hack, but its the only thing that works
+            services[cmd[1]] = serviceClass()  # Re-init our object
+            return TXT + "[i] Restarted object"
 
-    #Stop a specific module
-    elif cmd[0] == "STOP":
+    # Stop a specific module
+    elif cmd[0] == "stop":
         services[cmd[1]].stop()
         return TXT + "[i] Stopping %s..." % cmd[1]
 
     # Kill all the running modules
-    elif cmd[0] == "KILLALL":
+    elif cmd[0] == "killall":
         for s in services:
             services[s].stop()
         return TXT + "[+] Killed all services"
 
+    # Finish program - it will not start again
+    elif cmd[0] == "sleep":
+        exit(0)
+
     # Check on a thread
-    elif cmd[0] == "STATUS":
+    elif cmd[0] == "status":
         return services[cmd[1]].status()
 
     # Send commands straight to a specific thread
     elif cmd[0] in services:
-        if not services[cmd[0]].isAlive():  # If that service is not alive
-            return TXT + "[-] That service (%s) is not alive!" % cmd[0]
-        else:  # If the service is alive and will respond to us
-            return services[cmd[0]][cmd[1]]  # Execute a special command in a specific module
+        return services[cmd[0]][cmd[1:]]  # Execute a special command in a specific module
 
     # If the function received an unknown command
     else:
