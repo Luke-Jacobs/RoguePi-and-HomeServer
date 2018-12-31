@@ -8,6 +8,7 @@ TXT = "TXT----"
 PIC = "PIC----"
 EOF = "----EOF"
 
+
 class Camera(Thread):
 
     def __init__(self):
@@ -17,13 +18,12 @@ class Camera(Thread):
         self.taskList = Queue()
         self.outputList = Queue()
 
-    #call a function by string
+    # Call a function by string
     def __getitem__(self, item):
         if item == "SNAP":
             return self.snap()
         else:
             return TXT + "[-] Unknown camera command"
-
 
     def run(self):
         print("[+] Camera thread running")
@@ -44,6 +44,7 @@ class Camera(Thread):
                 print("[i] Pic data: %d" % len(picData))
                 self.outputList.put(PIC + picData + EOF)
             elif cmd == "STOP":
+                print('[i] Camera module stopping')
                 break
 
         self.camera.close()

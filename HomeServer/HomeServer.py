@@ -29,19 +29,24 @@ class InputHandler(Thread):
         while True:
             stdin = str(raw_input())  # Get input from user
             logging.debug('STDIN: %s' % stdin)
-
-            newTask = self.inputTasks.get(block=False)
-            if newTask[0] == self.ASK_FOR_FILENAME:  # If the main thread wants us to ask for a filename
-                if not stdin:  # If the user chooses default
-                    stdin = self.DEFAULT_FILENAME
-                with open(stdin, "wb") as fp:
-                    fp.write(newTask[1])  # Write the file data coupled with the taskname
-                sys.stdout.write("[+] Written data to %s\n>>" % stdin)
+            if not self.inputTasks.empty():
+                newTask = self.inputTasks.get(block=False)
+                if newTask[0] == self.ASK_FOR_FILENAME:  # If the main thread wants us to ask for a filename
+                    if not stdin:  # If the user chooses default
+                        stdin = self.DEFAULT_FILENAME
+                    with open(stdin, "wb") as fp:
+                        fp.write(newTask[1])  # Write the file data coupled with the taskname
+                    sys.stdout.write("[+] Written data to %s\n>>" % stdin)
             else:  # If the user is just entering a command
                 self.stdin.put(stdin)  # Put commandline data into a shared variable
 
     def clear(self):
         self.stdin = Queue()  # Delete contents of old Queue and start again
+
+    def newLine(self):
+        """For pretty console interaction."""
+        if self.inputTasks.empty():
+            sys.stdout.write('>>')
 
 
 def manageConnection(conn, userInput):
@@ -59,7 +64,11 @@ def manageConnection(conn, userInput):
             if data.count(PING):  # if server wants us to ping
                 logging.debug('[RECV] Received PING')
                 reply += PONG
-            command = userInput.stdin.get(block=False)
+            # Handle commands
+            if not userInput.stdin.empty():
+                command = userInput.stdin.get(block=False)
+            else:
+                command = None
             if command is not None:  # If our thread has user input waiting for us
                 reply += command.encode()
             logging.debug('[SEND] Responding with: %s' % reply)
@@ -68,7 +77,8 @@ def manageConnection(conn, userInput):
             # If we received data that should be presented
             if data.count(TXT):
                 data = data[len(TXT):]
-                sys.stdout.write("\n%s\n>>" % data)
+                sys.stdout.write("\n%s\n" % data)
+                userInput.newLine()
 
             if data.count(PIC):
                 sys.stdout.write("[+] Receiving picture...")
@@ -82,14 +92,13 @@ def manageConnection(conn, userInput):
                 data = data[:-len(EOF)]  # take away the EOF
                 # Ask user where to save this file data
                 sys.stdout.write('Filename to store image data [%s]: ' % userInput.DEFAULT_FILENAME)
-                userInput.inputTasks.put(InputHandler.ASK_FOR_FILENAME, data)
+                userInput.inputTasks.put((InputHandler.ASK_FOR_FILENAME, data))
 
             if data == b"":
                 print("\n[-][SOCKET] Closed connection...")
                 break
-
     except Exception as e:
-        print("\n[-][SOCKET] Exception: %s" % e)
+        print("\n[-][SOCKET] Exception: %s" % str(e))
 
 
 def waitForConnections():
@@ -104,9 +113,9 @@ def waitForConnections():
         s = socket.socket()  # Create TCP socket object
         s.bind(("0.0.0.0", SERVERPORT))  # Accept a connection from any address (domain name or ip)
         s.listen(1)  # Listen for 1 device
-        print "Listening for connections..."
+        sys.stdout.write("Listening for connections...\n")
         conn, addr = s.accept()
-        print "Accepted connection: ", addr
+        sys.stdout.write("Accepted connection: %s on port %d\n>>" % addr)
         conn.settimeout(CONNECTION_TIMEOUT)
         userInput.clear()  # Clear user input for new connection
         manageConnection(conn, userInput)  # Returns when an error happens

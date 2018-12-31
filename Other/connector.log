@@ -1,6 +1,0 @@
-DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): google.com:80
-DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): google.com:80
-DEBUG:urllib3.connectionpool:http://google.com:80 "GET / HTTP/1.1" 301 219
-DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): www.google.com:80
-DEBUG:urllib3.connectionpool:http://www.google.com:80 "GET / HTTP/1.1" 200 5317
-INFO:root:Received test page. You are already logged in.
