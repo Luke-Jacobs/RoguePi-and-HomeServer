@@ -1,0 +1,768 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="434a3b2a-2793-4db2-a481-aa438dbed859" name="Default" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Other/RPiCommandCenter - New.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="330">
+              <caret line="44" selection-start-line="44" selection-end-line="44" />
+              <folding>
+                <element signature="e#0#31#0" expanded="true" />
+                <element signature="e#356#1570#0" />
+                <element signature="e#563#786#0" />
+                <element signature="e#615#884#0" />
+                <element signature="e#730#1120#0" />
+                <element signature="e#915#983#0" />
+                <element signature="e#1029#2529#0" />
+                <element signature="e#1779#3241#0" />
+                <element signature="e#2000#3533#0" />
+                <element signature="e#1945#2019#0" />
+                <element signature="e#2527#3130#0" />
+                <element signature="e#3164#3229#0" />
+                <element signature="e#2815#3543#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/RoguePi/PiExecute.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <folding>
+                <element signature="e#0#31#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/RoguePi/RoguePi.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="413">
+              <caret line="168" selection-start-line="168" selection-end-line="168" />
+              <folding>
+                <element signature="e#619#1754#0" />
+                <element signature="e#911#1120#0" />
+                <element signature="e#947#985#0" />
+                <element signature="e#1153#1244#0" />
+                <element signature="e#1279#1309#0" />
+                <element signature="e#1348#1421#0" />
+                <element signature="e#1462#1580#0" />
+                <element signature="e#1610#1640#0" />
+                <element signature="e#1670#1700#0" />
+                <element signature="e#1731#1754#0" />
+                <element signature="e#2232#2363#0" />
+                <element signature="e#2431#3081#0" />
+                <element signature="e#2606#2995#0" />
+                <element signature="e#3299#4558#0" />
+                <element signature="e#3320#4428#0" />
+                <element signature="e#3651#3715#0" />
+                <element signature="e#3901#4428#0" />
+                <element signature="e#4479#4558#0" />
+                <element signature="e#4721#7110#0" />
+                <element signature="e#5071#7110#0" />
+                <element signature="e#5186#6918#0" />
+                <element signature="e#5393#6725#0" />
+                <element signature="e#5920#6126#0" />
+                <element signature="e#6045#6126#0" />
+                <element signature="e#6232#6361#0" />
+                <element signature="e#7184#7429#0" />
+                <element signature="e#7478#7705#0" />
+                <element signature="e#7556#7614#0" />
+                <element signature="e#7736#9130#0" />
+                <element signature="e#7736#7856#1" />
+                <element signature="e#8147#8229#0" />
+                <element signature="e#8988#9047#0" />
+                <element signature="e#9074#9130#0" />
+                <element signature="e#9177#9366#0" />
+                <element signature="e#9194#9269#0" />
+                <element signature="e#9311#9366#0" />
+                <element signature="e#9434#9951#0" />
+                <element signature="e#9805#9951#0" />
+                <element signature="e#9999#10792#0" />
+                <element signature="e#10258#10702#0" />
+                <element signature="e#10449#10678#0" />
+                <element signature="e#10515#10678#0" />
+                <element signature="e#10729#10792#0" />
+                <element signature="e#10966#11103#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>rawCapture</find>
+      <find>q+</find>
+      <find>8000</find>
+      <find>PING</find>
+      <find>=</find>
+      <find>GPIO</find>
+      <find>Received tes</find>
+      <find>logger</find>
+      <find>logging</find>
+      <find>Can a</find>
+      <find>getHiddenInputs</find>
+      <find>[-]</find>
+      <find>Got d</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>'</replace>
+      <replace>': '</replace>
+      <replace>log</replace>
+      <replace>log.info</replace>
+    </replaceStrings>
+  </component>
+  <component name="HierarchyBrowserManager">
+    <option name="SCOPE" value="All" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/test.py" />
+        <option value="$PROJECT_DIR$/MotionDetectServer.py" />
+        <option value="$PROJECT_DIR$/motiondetect.py" />
+        <option value="$PROJECT_DIR$/logintest.py" />
+        <option value="$PROJECT_DIR$/VideoView.py" />
+        <option value="$PROJECT_DIR$/MD_Login.py" />
+        <option value="$USER_HOME$/AppData/Local/Temp/97c3c837-1183-4199-a920-42afab61bb1b/home/pi/DetectionServer.py" />
+        <option value="$USER_HOME$/AppData/Local/Temp/97c3c837-1183-4199-a920-42afab61bb1b/home/pi/motiondetect.py" />
+        <option value="$USER_HOME$/AppData/Local/Temp/fe8bf55d-5ab2-4ad6-827f-82b8f6460602/home/pi/DetectionServer.py" />
+        <option value="$USER_HOME$/AppData/Local/Temp/eee9fbf9-e4a9-4aad-b09d-fa6a9c6ef606/home/pi/DetectionServer2.py" />
+        <option value="$PROJECT_DIR$/HomeBaseConnector.py" />
+        <option value="$USER_HOME$/AppData/Local/Temp/acc95ee1-6135-465c-ab03-f431958cc7dd/home/pi/HomeBaseConnector.py" />
+        <option value="$PROJECT_DIR$/Project/XfinityLoginScript.py" />
+        <option value="$PROJECT_DIR$/XfinityLoginScript.py" />
+        <option value="$PROJECT_DIR$/XfinityLoginScript (RPi).py" />
+        <option value="$PROJECT_DIR$/HomeBaseServer (UDP).py" />
+        <option value="$PROJECT_DIR$/Pi Files/RPiLogin.py" />
+        <option value="$PROJECT_DIR$/Pi Files/HomeBaseConnector.py" />
+        <option value="$PROJECT_DIR$/Pi Files/ConnectAll.py" />
+        <option value="$USER_HOME$/AppData/Local/Temp/scp02012/home/pi/ConnectAll.py" />
+        <option value="$USER_HOME$/AppData/Local/Temp/scp16253/home/pi/ConnectAll.py" />
+        <option value="$USER_HOME$/AppData/Local/Temp/scp49378/home/pi/ConnectAll.py" />
+        <option value="$USER_HOME$/AppData/Local/Temp/scp35125/home/pi/motiondetect.py" />
+        <option value="$USER_HOME$/AppData/Local/Temp/scp42551/home/pi/ConnectAll.py" />
+        <option value="$PROJECT_DIR$/Pi Files/ConnectAll2.py" />
+        <option value="$PROJECT_DIR$/HomeBaseServer.py" />
+        <option value="$PROJECT_DIR$/Pi Files/PiExecute.py" />
+        <option value="$PROJECT_DIR$/Pi Files/CameraModule.py" />
+        <option value="$PROJECT_DIR$/Project/RPiCommandCenter.py" />
+        <option value="$PROJECT_DIR$/Pi Files/TimelapseModule.py" />
+        <option value="$PROJECT_DIR$/Pi Files/PiExecServer.py" />
+        <option value="$PROJECT_DIR$/PiExecServer.py" />
+        <option value="$PROJECT_DIR$/PiExecServer - Class.py" />
+        <option value="$PROJECT_DIR$/../../Web/Renweb-Get-Newest-Assignments/GetNewestAssignments.py" />
+        <option value="$PROJECT_DIR$/RPiCommandCenter.py" />
+        <option value="$PROJECT_DIR$/RoguePi.py" />
+        <option value="$PROJECT_DIR$/CameraModule.py" />
+        <option value="$PROJECT_DIR$/PiExecute.py" />
+        <option value="$PROJECT_DIR$/Other/RPiCommandCenter - New.py" />
+        <option value="$PROJECT_DIR$/Rogue/RoguePi.py" />
+        <option value="$PROJECT_DIR$/RoguePi/RoguePi.py" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="951" />
+    <option name="width" value="978" />
+    <option name="height" value="1039" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="RPi HomeBase" type="b2602c69:ProjectViewProjectNode" />
+              <item name="RPi HomeBase" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="RPi HomeBase" type="b2602c69:ProjectViewProjectNode" />
+              <item name="RPi HomeBase" type="462c0819:PsiDirectoryNode" />
+              <item name="RoguePi" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\luked\OneDrive\Python Projects\RPi\RPi HomeBase\Rogue" />
+      <recent name="C:\Users\luked\OneDrive\Python Projects\RPi\RPi HomeBase\Other" />
+      <recent name="C:\Users\luked\OneDrive\Python Projects\RPi\RPi HomeBase" />
+      <recent name="C:\Users\luked\OneDrive\Python Projects\RPi Motion Detect Server\Pi Files" />
+      <recent name="C:\Users\luked\OneDrive\Python Projects\RPi Motion Detect Server" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\luked\OneDrive\Python Projects\RPi\RPi HomeBase\Other\Pictures" />
+      <recent name="C:\Users\luked\OneDrive\Python Projects\RPi\RPi HomeBase\Other\Pictures\Second" />
+      <recent name="C:\Users\luked\OneDrive\Python Projects\RPi\RPi HomeBase" />
+      <recent name="C:\Users\luked\OneDrive\Python Projects\RPi\RPi HomeBase\Old" />
+      <recent name="C:\Users\luked\OneDrive\Python Projects\RPi\RPi HomeBase\Project" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Python.RPiCommandCenter - New">
+    <configuration name="HomeBaseServer" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="RPiMotionDetectServer" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="C:\Users\luked\OneDrive\Python Projects\RPi\RPi HomeBase\Old\HomeBaseServer.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="PiExecServer - Class" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="RPiMotionDetectServer" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/PiExecServer - Class.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="RPiCommandCenter - New" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="RPiMotionDetectServer" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Other" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Other/RPiCommandCenter - New.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="RPiCommandCenter" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="RPiMotionDetectServer" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="E:\Python27\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/RPiCommandCenter.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="RPiCommandCenter" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="RPiMotionDetectServer" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/RPiCommandCenter.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration name="XfinityLoginScript (RPi)" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="RPiMotionDetectServer" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="C:\Users\luked\OneDrive\Python Projects\RPi\RPi HomeBase\Old\XfinityLoginScript (RPi).py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Unittests">
+      <module name="RPiMotionDetectServer" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;.&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Python.HomeBaseServer" />
+      <item itemvalue="Python.PiExecServer - Class" />
+      <item itemvalue="Python.RPiCommandCenter - New" />
+      <item itemvalue="Python.RPiCommandCenter" />
+      <item itemvalue="Python.XfinityLoginScript (RPi)" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.RPiCommandCenter - New" />
+        <item itemvalue="Python.RPiCommandCenter" />
+        <item itemvalue="Python.PiExecServer - Class" />
+        <item itemvalue="Python.RPiCommandCenter" />
+        <item itemvalue="Python.HomeBaseServer" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="434a3b2a-2793-4db2-a481-aa438dbed859" name="Default" comment="" />
+      <created>1507492013289</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1507492013289</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18255034" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.21775313" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32900432" />
+      <window_info anchor="bottom" id="Debug" order="2" weight="0.7571116" />
+      <window_info anchor="bottom" id="Cvs" order="3" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="4" weight="0.4" />
+      <window_info anchor="bottom" id="Event Log" order="5" side_tool="true" weight="0.3286119" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Terminal" order="8" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.32147652" />
+      <window_info anchor="right" id="Data View" order="3" weight="0.3295562" />
+      <window_info anchor="right" id="Python Console" order="4" weight="0.33154362" />
+      <window_info anchor="right" id="Run" order="5" weight="0.44496644" />
+    </layout>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/lj.jpg" />
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/acc95ee1-6135-465c-ab03-f431958cc7dd/home/pi/HomeBaseConnector.py" />
+    <entry file="file://E:/Python27/Lib/urllib2.py" />
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/scp02012/home/pi/ConnectAll.py" />
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/scp16253/home/pi/ConnectAll.py" />
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/scp49378/home/pi/ConnectAll.py" />
+    <entry file="file://$PROJECT_DIR$/Old/Pi Files/HomeBaseConnector.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="363">
+          <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/scp35125/home/pi/motiondetect.py" />
+    <entry file="file://$PROJECT_DIR$/Old/Pi Files/ConnectAll.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4271">
+          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/scp42551/home/pi/ConnectAll.py" />
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/scp33990/home/pi/DetectionServer2.py" />
+    <entry file="file://$PROJECT_DIR$/Old/Pi Files/RPiLogin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="859">
+          <caret line="101" column="9" lean-forward="true" selection-start-line="101" selection-start-column="9" selection-end-line="101" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/scp15089/home/pi/motiondetect.py" />
+    <entry file="file://$APPLICATION_HOME_DIR$/helpers/typeshed/stdlib/2/typing.pyi">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="298">
+          <caret line="314" column="8" selection-start-line="314" selection-start-column="8" selection-end-line="314" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Old/HomeBaseConnector.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Old/HomeBaseServer (UDP).py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Old/XfinityLoginScript (RPi).py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="693">
+          <caret line="96" lean-forward="true" selection-start-line="96" selection-end-line="96" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Old/MotionDetectorClient.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Old/DetectionServer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Old/XfinityLoginScript.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1803">
+          <caret line="73" lean-forward="true" selection-start-line="73" selection-end-line="73" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Old/HomeBaseServer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pi Files/__init__.py" />
+    <entry file="file://$PROJECT_DIR$/Project/__init__.py" />
+    <entry file="file://$PROJECT_DIR$/tmp2.jpeg" />
+    <entry file="file://$PROJECT_DIR$/tmp3.jpeg" />
+    <entry file="file://$PROJECT_DIR$/tmp.jpeg" />
+    <entry file="file://$PROJECT_DIR$/TimelapseModule.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../Vision/OpenCVcam/OpenCVcam.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../Vision/MotionDetect/MotionDetect.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1527" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../Vision/StreamVideo/StreamVideo.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../Unfinished/imagegrabtest.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2757" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../Unfinished/webcam_view.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../Misc/server.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1347">
+          <caret line="38" column="10" lean-forward="true" selection-start-line="38" selection-start-column="10" selection-end-line="38" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PiExecServer.py" />
+    <entry file="file://C:/Python27/Lib/site-packages/requests/adapters.py" />
+    <entry file="file://$PROJECT_DIR$/PiExecServer - Class.py" />
+    <entry file="file://$PROJECT_DIR$/../../Web/Renweb-Get-Newest-Assignments/main.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../Web/Renweb-Get-Newest-Assignments/GetNewestAssignments.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="831">
+          <caret line="64" lean-forward="true" selection-start-line="64" selection-end-line="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RPiCommandCenter.py" />
+    <entry file="file://$PROJECT_DIR$/Other/RPiCommandCenter.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1658" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PiExecute.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="477">
+          <caret line="38" selection-start-line="38" selection-end-line="38" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CameraModule.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="367">
+          <caret line="21" selection-start-line="21" selection-end-line="21" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RoguePi.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="107" column="33" lean-forward="true" selection-start-line="107" selection-start-column="33" selection-end-line="107" selection-end-column="33" />
+          <folding>
+            <element signature="e#518#652#0" />
+            <element signature="e#690#778#0" />
+            <element signature="e#1100#1224#0" />
+            <element signature="e#1292#1942#0" />
+            <element signature="e#1467#1856#0" />
+            <element signature="e#1981#4243#0" />
+            <element signature="e#2331#4243#0" />
+            <element signature="e#2446#4051#0" />
+            <element signature="e#3900#5142#0" />
+            <element signature="e#3130#3336#0" />
+            <element signature="e#3255#3336#0" />
+            <element signature="e#3442#3531#0" />
+            <element signature="e#4317#4562#0" />
+            <element signature="e#4611#4838#0" />
+            <element signature="e#4689#4747#0" />
+            <element signature="e#4869#6263#0" />
+            <element signature="e#4869#4989#1" />
+            <element signature="e#5280#5362#0" />
+            <element signature="e#6121#6180#0" />
+            <element signature="e#6207#6263#0" />
+            <element signature="e#6310#6499#0" />
+            <element signature="e#6327#6402#0" />
+            <element signature="e#6444#6499#0" />
+            <element signature="e#6567#7084#0" />
+            <element signature="e#6938#7084#0" />
+            <element signature="e#7132#7925#0" />
+            <element signature="e#7391#7835#0" />
+            <element signature="e#7582#7811#0" />
+            <element signature="e#7648#7811#0" />
+            <element signature="e#7862#7925#0" />
+            <element signature="e#8012#8029#0" />
+            <element signature="e#8046#8065#0" />
+            <element signature="e#8097#8241#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Other/Pictures/2.jpeg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Other/tmp.jpeg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Other/RPiCommandCenter - Backup.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Other/RPiCommandCenter - New.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="44" selection-start-line="44" selection-end-line="44" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+            <element signature="e#356#1570#0" />
+            <element signature="e#563#786#0" />
+            <element signature="e#615#884#0" />
+            <element signature="e#730#1120#0" />
+            <element signature="e#915#983#0" />
+            <element signature="e#1029#2529#0" />
+            <element signature="e#1779#3241#0" />
+            <element signature="e#2000#3533#0" />
+            <element signature="e#1945#2019#0" />
+            <element signature="e#2527#3130#0" />
+            <element signature="e#3164#3229#0" />
+            <element signature="e#2815#3543#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Rogue/RoguePi - Backup.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Rogue/RoguePi.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="611">
+          <caret line="152" selection-start-line="152" selection-end-line="152" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+            <element signature="e#619#1634#0" />
+            <element signature="e#702#797#0" />
+            <element signature="e#947#985#0" />
+            <element signature="e#826#882#0" />
+            <element signature="e#1402#1415#0" />
+            <element signature="e#1471#1544#0" />
+            <element signature="e#1585#1703#0" />
+            <element signature="e#1610#1623#0" />
+            <element signature="e#1670#1683#0" />
+            <element signature="e#1611#1634#0" />
+            <element signature="e#2062#2186#0" />
+            <element signature="e#2254#2904#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RoguePi/PiExecute.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RoguePi/RoguePi.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="413">
+          <caret line="168" selection-start-line="168" selection-end-line="168" />
+          <folding>
+            <element signature="e#619#1754#0" />
+            <element signature="e#911#1120#0" />
+            <element signature="e#947#985#0" />
+            <element signature="e#1153#1244#0" />
+            <element signature="e#1279#1309#0" />
+            <element signature="e#1348#1421#0" />
+            <element signature="e#1462#1580#0" />
+            <element signature="e#1610#1640#0" />
+            <element signature="e#1670#1700#0" />
+            <element signature="e#1731#1754#0" />
+            <element signature="e#2232#2363#0" />
+            <element signature="e#2431#3081#0" />
+            <element signature="e#2606#2995#0" />
+            <element signature="e#3299#4558#0" />
+            <element signature="e#3320#4428#0" />
+            <element signature="e#3651#3715#0" />
+            <element signature="e#3901#4428#0" />
+            <element signature="e#4479#4558#0" />
+            <element signature="e#4721#7110#0" />
+            <element signature="e#5071#7110#0" />
+            <element signature="e#5186#6918#0" />
+            <element signature="e#5393#6725#0" />
+            <element signature="e#5920#6126#0" />
+            <element signature="e#6045#6126#0" />
+            <element signature="e#6232#6361#0" />
+            <element signature="e#7184#7429#0" />
+            <element signature="e#7478#7705#0" />
+            <element signature="e#7556#7614#0" />
+            <element signature="e#7736#9130#0" />
+            <element signature="e#7736#7856#1" />
+            <element signature="e#8147#8229#0" />
+            <element signature="e#8988#9047#0" />
+            <element signature="e#9074#9130#0" />
+            <element signature="e#9177#9366#0" />
+            <element signature="e#9194#9269#0" />
+            <element signature="e#9311#9366#0" />
+            <element signature="e#9434#9951#0" />
+            <element signature="e#9805#9951#0" />
+            <element signature="e#9999#10792#0" />
+            <element signature="e#10258#10702#0" />
+            <element signature="e#10449#10678#0" />
+            <element signature="e#10515#10678#0" />
+            <element signature="e#10729#10792#0" />
+            <element signature="e#10966#11103#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
