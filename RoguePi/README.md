@@ -14,7 +14,7 @@ I set this script to autostart whenever the device boots.
 -  `PiExecute` manages command modules that run as services.
   - It starts and stops threads.
   - It returns the statuses of threads.
-  - It passes execution to a addon object (ex. Camera, Timelapse) and returns their output.
+  - It passes execution to an addon object (ex. Camera, Timelapse) and returns their output.
 
 ### Modules
 
