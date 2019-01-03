@@ -155,6 +155,7 @@ class HomeConnector:
         return haystackStr[startLoc:endLoc]
 
     def attendToConnection(self, conn):
+        """"""
         logging.debug('Attending to connection...')
         while True:
             # Use try loop to handle socket problems due to spotty internet or device movement
@@ -193,7 +194,7 @@ class HomeConnector:
         logging.error('Leaving attend connection function -> back to debugging connection')
 
     def searchForConnection(self):
-        """Return a socket after attempting to connect to the HomeBase server."""
+        """Attempts to connect to the HomeBase server, and if successful, calls attendToConnection. If the connection breaks, it tries again."""
         while True:  # Main loop
             logging.info('Checking wifi...')
 
@@ -218,7 +219,7 @@ class HomeConnector:
                         else:
                             log.info('[-] Failed home socket connection')
                             nFails += 1
-                    if nFails == self.HOME_SOCKET_RETRIES:  # if both attempts failed
+                    if nFails == self.HOME_SOCKET_RETRIES:  # if all attempts failed
                         log.info('[-] Exceeded number of home socket retries!')
                         del self.socket
                         continue
@@ -253,7 +254,7 @@ class HomeConnector:
 
     def login(self):
         """Login to an XfinityWifi hotspot."""
-
+        
         # Get redirect page
         page = self.session.get("http://%s" % self.testURL)
         if self.loginPortal in page.url:  # If we receive a portal login
@@ -264,7 +265,7 @@ class HomeConnector:
         else:
             raise RuntimeError('Received an unknown page URL')
 
-        # Collect form data
+        # Collect form data and hash values that we need to POST our login
         self.loginForm['hash'] = self.getBetween(self.hashIdentifiers, page.text)
         self.loginForm['client_mac'] = self.getBetween(self.macIdentifiers, page.text)
         self.loginForm['get_url'] = self.getBetween(self.geturlIdentifiers, page.text)
@@ -274,7 +275,7 @@ class HomeConnector:
         resp = self.session.post(self.loginPostUrl, data=self.loginForm)
         if resp.status_code != 200:
             logging.warning('Bad response from server after sending form! Code: %d' % resp.status_code)
-        resp = json.loads(resp.text)
+        resp = json.loads(resp.text)  # The hotspot replies with a JSON message
         if resp['response'] == 'Success':
             print('Successful login response!')
             return True
@@ -293,7 +294,8 @@ class HomeConnector:
 
 
 if __name__ == '__main__':
+    # On the device, the username and password are hardcoded
     username = 'you@domain.com'
     password = 'yourpassword'
     con = HomeConnector(username, password)
-    con.searchForConnection()
+    con.searchForConnection()  # Do forever
