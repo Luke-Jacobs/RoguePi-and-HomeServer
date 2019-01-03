@@ -6,14 +6,14 @@ from TimelapseModule import Timelapse
 # Global Constants
 services = {"camera": Camera(),
             "timelapse": Timelapse()}
-TXT = "TXT----"
+TXT = "TXT----"  # To tag our response to the HomeServer so that it knows it can display it. (ie. It's not an image)
 
 
 def PiExecute(cmd):
     """
-    This function receives raw commands and sends them out to the right module (service)
-    :param cmd: raw command
-    :return: response of a service
+    This function receives raw commands and sends them out to the right module (service). It manages the threads of the services.
+    :param str cmd: raw command
+    :return bytes: response of a service
     """
 
     global services
@@ -28,8 +28,8 @@ def PiExecute(cmd):
             return TXT + "[i] Starting %s..." % cmd[1]
         except RuntimeError, e:  # If the Thread has been already started, restart it
             print 'RuntimeError: %s' % str(e)
-            serviceClass = type(services[cmd[1]])  # This is certainly a hack, but its the only thing that works
-            services[cmd[1]] = serviceClass()  # Re-init our object
+            serviceClass = type(services[cmd[1]])  # Grab the class that made the object
+            services[cmd[1]] = serviceClass()  # Re-init our object so that we can restart the thread
             return TXT + "[i] Restarted object"
 
     # Stop a specific module
@@ -57,4 +57,4 @@ def PiExecute(cmd):
 
     # If the function received an unknown command
     else:
-        return TXT + "[-] Unknown command to give to service"
+        return TXT + "[-] Unknown command to give to device"
