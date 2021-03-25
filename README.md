@@ -1,5 +1,13 @@
 # RoguePi
 
+### Skills Developed
+
+The skills I developed with this project were the following:
+
+- How to program network functions to automate the wifi login procedure to an Xfinity hotspot.
+- Designing my device to be persistent over wifi, even when its wifi access was constantly changing.
+- Sending images over a TCP server.
+
 ### Inspiration
 
 ![Monkey Bars](Pictures/Monkey%20Bars.jpg)
